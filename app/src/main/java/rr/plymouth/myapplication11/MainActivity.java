@@ -15,10 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.support.design.widget.BottomNavigationView;
+import android.support.annotation.NonNull;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
+    private WordViewModel mWordViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /* Кнопка, запускающая новую форму, на которой добавляется новая запись */
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
+                startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
+            }
+        });
     }
+
+    /* Событие нажатия на нижнее Меню */
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navi_report:
+                    /* Здесь будет показываться отчет за указанный период */
+                    return true;
+                case R.id.navi_journal:
+                    /* Здесь будет показан журнал - лог последних транзакций */
+                    return true;
+                case R.id.navi_add_new:
+                    /* Здесь будут добавляться новые записи (основное окно) */
+                    return true;
+                case R.id.navi_accounts:
+                    /* Будут показываться счета пользователя, текущий остаток средств на них */
+                    return true;
+                case R.id.navi_settings:
+                    /* Будут показываться разные настройки */
+                    return true;
+            }
+            return false;
+        }
+    };
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -60,9 +102,4 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
-    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
-
-    private WordViewModel mWordViewModel;
-
-
 }

@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">My Application11</string>
-    <string name="action_settings">Settings</string>
-    <string name="hint_word">Word...</string>
+    <string name="app_name">MyCash</string>
+    <string name="hint_word">New item</string>
     <string name="button_save">Save</string>
-    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="empty_not_saved">Item is empty.</string>
+
+    <string name="navi_report">Report</string>
+    <string name="navi_journal">Journal</string>
+    <string name="navi_add_new">New</string>
+    <string name="navi_accounts">Accounts</string>
+    <string name="navi_settings">Settings</string>
 </resources>
