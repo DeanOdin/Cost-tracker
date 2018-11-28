@@ -3,24 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navi_report"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@android:drawable/ic_menu_month"
         android:title="@string/navi_report" />
     <item
         android:id="@+id/navi_journal"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="@string/navi_journal" />
     <item
         android:id="@+id/navi_add_new"
-        android:checkable="false"
-        android:checked="false"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@android:drawable/ic_menu_add"
         android:title="@string/navi_add_new" />
     <item
         android:id="@+id/navi_accounts"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@android:drawable/ic_menu_share"
         android:title="@string/navi_accounts" />
     <item
         android:id="@+id/navi_settings"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@android:drawable/ic_menu_preferences"
         android:title="@string/navi_settings" />
 </menu>
